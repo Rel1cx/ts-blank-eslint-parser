@@ -1,0 +1,51 @@
+{
+  "name": "ts-blank-eslint-parser",
+  "version": "0.0.3",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "./package.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint:publish": "publint",
+    "lint:type": "tsc --noEmit",
+    "prepare": "pnpm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@tsconfig/node22": "^22.0.0",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^22.10.10",
+    "eslint": "^9.18.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.21.0"
+  },
+  "peerDependencies": {
+    "ts-blank-space": "^0.5.0",
+    "hermes-eslint": "^0.26.0"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "sideEffects": false,
+  "module": "dist/index.mjs",
+  "packageManager": "pnpm@10.0.0"
+}
