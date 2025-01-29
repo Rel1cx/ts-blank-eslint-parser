@@ -53,11 +53,22 @@ const defaultOptions: meriyah.Options = {
 };
 
 function parse(code: string, options?: meriyah.Options) {
-  return meriyah.parse(tsBlankSpace(code), { ...defaultOptions, ...options });
+  const opts = {
+    ...defaultOptions,
+    onToken: [],
+    onComment: [],
+    ...options
+  };
+  return meriyah.parse(tsBlankSpace(code), opts);
 }
 
 function parseForESLint(code: string, options?: meriyah.Options) {
-  const opts = { ...defaultOptions, ...options };
+  const opts = {
+    ...defaultOptions,
+    onToken: [],
+    onComment: [],
+    ...options
+  };
   const ast = meriyah.parse(tsBlankSpace(code), opts);
   const scopeManager = analyze(ast as never, {
     impliedStrict: !!opts.impliedStrict,
