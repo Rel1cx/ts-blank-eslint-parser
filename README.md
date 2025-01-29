@@ -50,3 +50,7 @@ export default [
   },
 ];
 ```
+
+## Unsupported Syntax
+
+Some parts of TypeScript are not supported because they can't be erased in place due to having runtime semantics. See [unsupported_syntax.md](https://github.com/bloomberg/ts-blank-space/blob/main/docs/unsupported_syntax.md).
