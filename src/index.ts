@@ -52,24 +52,18 @@ const defaultOptions: meriyah.Options = {
   jsx: true,
 };
 
-function parse(code: string, options?: meriyah.Options) {
-  const opts = {
-    ...defaultOptions,
-    onToken: [],
-    onComment: [],
-    ...options
-  };
-  return meriyah.parse(tsBlankSpace(code), opts);
-}
-
 function parseForESLint(code: string, options?: meriyah.Options) {
+  const tokens: meriyah.Options['onToken'] = []
+  const comments: meriyah.Options['onComment'] = []
   const opts = {
     ...defaultOptions,
-    onToken: [],
-    onComment: [],
+    onToken: tokens,
+    onComment: comments,
     ...options
   };
   const ast = meriyah.parse(tsBlankSpace(code), opts);
+  Reflect.set(ast, "tokens", tokens);
+  Reflect.set(ast, "comments", comments);
   const scopeManager = analyze(ast as never, {
     impliedStrict: !!opts.impliedStrict,
     sourceType: opts.module
@@ -80,6 +74,10 @@ function parseForESLint(code: string, options?: meriyah.Options) {
     ast,
     scopeManager,
   };
+}
+
+function parse(code: string, options?: meriyah.Options) {
+  return parseForESLint(code, options).ast;
 }
 
 export default {
