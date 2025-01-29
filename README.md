@@ -1,6 +1,6 @@
 # ts-blank-eslint-parser
 
-A custom ESLint parser for `.tsx?` files that strips out erasable TypeScript syntax (like types, interfaces, etc.) with `ts-blank-space` then passes the rest to the `hermes-eslint` parser.
+A custom ESLint parser for `.tsx?` files that strips out erasable TypeScript syntax with `ts-blank-space` then passes the rest to the `meriyah` parser.
 
 ## Installation
 
