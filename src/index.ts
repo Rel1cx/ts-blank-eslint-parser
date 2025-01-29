@@ -6,7 +6,7 @@ import packageJson from "../package.json" with { type: "json" };
 
 const { name, version } = packageJson;
 
-const defaultOptions: meriyah.Options = {
+const defaultOptions = {
   // The flag to allow module code
   module: true,
 
@@ -51,7 +51,7 @@ const defaultOptions: meriyah.Options = {
 
   // Enable React JSX parsing
   jsx: true,
-};
+} as const satisfies meriyah.Options;
 
 export const meta = {
   name,
@@ -74,7 +74,7 @@ export function parseForESLint(code: string, options?: parseForESLint.Options): 
   };
   const scopeManager = eslintScope.analyze(ast, {
     ecmaVersion: 2022,
-    impliedStrict: !!opts.impliedStrict,
+    impliedStrict: opts.impliedStrict,
     sourceType: opts.module
       ? "module"
       : "script",
