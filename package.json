@@ -1,7 +1,8 @@
 {
   "name": "ts-blank-eslint-parser",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": {
@@ -16,6 +17,7 @@
     "./package.json": "./package.json"
   },
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
@@ -33,19 +35,21 @@
     "@tsconfig/node22": "^22.0.0",
     "@tsconfig/strictest": "^2.0.5",
     "@types/node": "^22.10.10",
+    "@typescript-eslint/scope-manager": "^8.22.0",
     "eslint": "^9.18.0",
+    "meriyah": "^6.0.5",
+    "ts-blank-space": "^0.5.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.21.0"
   },
   "peerDependencies": {
-    "ts-blank-space": "^0.5.0",
-    "hermes-eslint": "^0.26.0"
+    "@typescript-eslint/scope-manager": "^8.22.0",
+    "meriyah": "^6.0.5",
+    "ts-blank-space": "^0.5.0"
   },
+  "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": ">=18.18.0"
-  },
-  "sideEffects": false,
-  "module": "dist/index.mjs",
-  "packageManager": "pnpm@10.0.0"
+  }
 }
