@@ -1,7 +1,7 @@
 import tsBlankSpace from "ts-blank-space";
 import * as meriyah from "meriyah";
 // @ts-expect-error eslint-scope is not typed
-import * as eslintScope from 'eslint-scope';
+import * as eslintScope from "eslint-scope";
 import packageJson from "../package.json" with { type: "json" };
 
 const { name, version } = packageJson;
@@ -53,18 +53,20 @@ const defaultOptions: meriyah.Options = {
   jsx: true,
 };
 
-function parseForESLint(code: string, options?: meriyah.Options) {
-  const tokens: meriyah.Options['onToken'] = []
-  const comments: meriyah.Options['onComment'] = []
+function parseForESLint(code: string, options?: parseForESLint.Options): parseForESLint.ReturnType {
+  const tokens: meriyah.Options["onToken"] = [];
+  const comments: meriyah.Options["onComment"] = [];
   const opts = {
     ...defaultOptions,
+    ...options,
     onToken: tokens,
     onComment: comments,
-    ...options
   };
-  const ast = meriyah.parse(tsBlankSpace(code), opts);
-  Reflect.set(ast, "tokens", tokens);
-  Reflect.set(ast, "comments", comments);
+  const ast = {
+    ...meriyah.parse(tsBlankSpace(code), opts),
+    tokens,
+    comments,
+  };
   const scopeManager = eslintScope.analyze(ast, {
     ecmaVersion: 2022,
     impliedStrict: !!opts.impliedStrict,
@@ -78,8 +80,21 @@ function parseForESLint(code: string, options?: meriyah.Options) {
   };
 }
 
-function parse(code: string, options?: meriyah.Options) {
+export declare namespace parseForESLint {
+  type Options = Omit<meriyah.Options, "onToken" | "onComment">;
+  type ReturnType = {
+    ast: meriyah.ESTree.Program;
+    scopeManager: eslintScope.ScopeManager;
+  };
+}
+
+function parse(code: string, options?: parse.Options): parse.ReturnType {
   return parseForESLint(code, options).ast;
+}
+
+export declare namespace parse {
+  type Options = Omit<meriyah.Options, "onToken" | "onComment">;
+  type ReturnType = meriyah.ESTree.Program;
 }
 
 export default {
