@@ -53,7 +53,12 @@ const defaultOptions: meriyah.Options = {
   jsx: true,
 };
 
-function parseForESLint(code: string, options?: parseForESLint.Options): parseForESLint.ReturnType {
+export const meta = {
+  name,
+  version,
+};
+
+export function parseForESLint(code: string, options?: parseForESLint.Options): parseForESLint.ReturnType {
   const tokens: meriyah.Options["onToken"] = [];
   const comments: meriyah.Options["onComment"] = [];
   const opts = {
@@ -88,7 +93,7 @@ export declare namespace parseForESLint {
   };
 }
 
-function parse(code: string, options?: parse.Options): parse.ReturnType {
+export function parse(code: string, options?: parse.Options): parse.ReturnType {
   return parseForESLint(code, options).ast;
 }
 
@@ -98,10 +103,7 @@ export declare namespace parse {
 }
 
 export default {
-  meta: {
-    name,
-    version,
-  },
+  meta,
   parse,
   parseForESLint,
 };
