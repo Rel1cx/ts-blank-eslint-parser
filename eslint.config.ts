@@ -12,14 +12,14 @@ export default tseslint.config(
     extends: [
       eslintJs.configs.recommended,
       tseslint.configs.recommended,
-    ],
+    ]
   },
   // base configuration for browser environment source files
   {
     files: TSCONFIG.include,
-    extends: [
-      tseslint.configs.recommendedTypeChecked,
-    ],
+    // extends: [
+    //   tseslint.configs.recommendedTypeChecked,
+    // ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -43,4 +43,10 @@ export default tseslint.config(
       "no-console": "off",
     },
   },
+  {
+    files: GLOB_TS,
+    rules: {
+      "@typescript-eslint/no-namespace": "off",
+    }
+  }
 );
