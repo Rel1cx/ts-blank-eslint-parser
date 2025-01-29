@@ -1,6 +1,7 @@
 import tsBlankSpace from "ts-blank-space";
 import * as meriyah from "meriyah";
-import { analyze } from "@typescript-eslint/scope-manager";
+// @ts-expect-error eslint-scope is not typed
+import * as eslintScope from 'eslint-scope';
 import packageJson from "../package.json" with { type: "json" };
 
 const { name, version } = packageJson;
@@ -64,7 +65,8 @@ function parseForESLint(code: string, options?: meriyah.Options) {
   const ast = meriyah.parse(tsBlankSpace(code), opts);
   Reflect.set(ast, "tokens", tokens);
   Reflect.set(ast, "comments", comments);
-  const scopeManager = analyze(ast as never, {
+  const scopeManager = eslintScope.analyze(ast, {
+    ecmaVersion: 2022,
     impliedStrict: !!opts.impliedStrict,
     sourceType: opts.module
       ? "module"
