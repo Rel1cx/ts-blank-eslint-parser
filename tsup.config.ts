@@ -7,7 +7,7 @@ export default {
   format: ["cjs", "esm"],
   minify: false,
   outDir: "dist",
-  platform: "neutral",
+  platform: "node",
   shims: false,
   sourcemap: false,
   splitting: false,

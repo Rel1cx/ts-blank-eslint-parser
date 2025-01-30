@@ -2,6 +2,7 @@ import tsBlankSpace from "ts-blank-space";
 import * as meriyah from "meriyah";
 // @ts-expect-error eslint-scope is not typed
 import * as eslintScope from "eslint-scope";
+
 import packageJson from "../package.json" with { type: "json" };
 
 const { name, version } = packageJson;
