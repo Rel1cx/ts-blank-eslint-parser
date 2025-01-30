@@ -12,7 +12,7 @@ const defaultOptions = {
   module: true,
 
   // The flag to enable stage 3 support (ESNext)
-  next: false,
+  next: true,
 
   // The flag to enable start, end offsets and range: [start, end] to each node
   ranges: true,
@@ -59,6 +59,31 @@ export const meta = {
   version,
 };
 
+export function parse(code: string, options?: parse.Options): parse.ReturnType {
+  const tokens: meriyah.Options["onToken"] = [];
+  const comments: meriyah.Options["onComment"] = [];
+  const opts = {
+    ...defaultOptions,
+    ...options,
+    onToken: tokens,
+    onComment: comments,
+  };
+  return {
+    ...meriyah.parse(tsBlankSpace(code), opts),
+    tokens,
+    comments,
+  };
+}
+
+export declare namespace parse {
+  type Options = Omit<meriyah.Options, "onToken" | "onComment">;
+  type ReturnType = meriyah.ESTree.Program & {
+    tokens: meriyah.Options['onToken'],
+    comments: meriyah.Options['onComment']
+  }
+}
+
+
 export function parseForESLint(code: string, options?: parseForESLint.Options): parseForESLint.ReturnType {
   const tokens: meriyah.Options["onToken"] = [];
   const comments: meriyah.Options["onComment"] = [];
@@ -92,15 +117,6 @@ export declare namespace parseForESLint {
     ast: meriyah.ESTree.Program;
     scopeManager: eslintScope.ScopeManager;
   };
-}
-
-export function parse(code: string, options?: parse.Options): parse.ReturnType {
-  return parseForESLint(code, options).ast;
-}
-
-export declare namespace parse {
-  type Options = Omit<meriyah.Options, "onToken" | "onComment">;
-  type ReturnType = meriyah.ESTree.Program;
 }
 
 export default {
