@@ -57,6 +57,74 @@ export default [
 ];
 ```
 
+### Advanced Usage
+
+```js
+// eslint.config.js
+
+// @ts-check
+import eslintJs from "@eslint/js";
+import eslintReact from "@eslint-react/eslint-plugin";
+import { isInEditorEnv } from "@eslint-react/shared";
+import tsBlankEslintParser from "ts-blank-eslint-parser";
+import tseslint from "typescript-eslint";
+import globals from "globals";
+
+import TSCONFIG from "./tsconfig.json" with { type: "json" };
+import TSCONFIG_NODE from "./tsconfig.node.json" with { type: "json" };
+
+function getOptimalParserConfig(project = "tsconfig.json") {
+  switch (true) {
+    case isInEditorEnv():
+    case process.argv.includes("--fix"):
+      return {
+        parser: tseslint.parser,
+        parserOptions: {
+          project,
+          tsconfigRootDir: import.meta.dirname,
+        },
+      };
+  }
+  return { parser: tsBlankEslintParser };
+}
+
+export default [
+  // base configuration for browser environment source files
+  {
+    files: TSCONFIG.include,
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+      ...getOptimalParserConfig(),
+    },
+    rules: {
+      ...eslintJs.configs.recommended.rules,
+    },
+  },
+  // base configuration for node environment source files (*.config.js, etc.)
+  {
+    files: TSCONFIG_NODE.include,
+    ignores: TSCONFIG_NODE.exclude,
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+      ...getOptimalParserConfig("tsconfig.node.json"),
+    },
+    rules: {
+      ...eslintJs.configs.recommended.rules,
+      "no-console": "off",
+    },
+  },
+  // react configuration for browser environment source files
+  {
+    files: TSCONFIG.include,
+    ...eslintReact.configs.recommended,
+  },
+];
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
