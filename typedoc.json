@@ -1,0 +1,25 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "name": "ts-blank-eslint-parser",
+    "entryPoints": [
+        "src/index.ts"
+    ],
+    "out": "docs",
+    "cleanOutputDir": true,
+    "disableSources": false,
+    "hideGenerator": true,
+    "excludeInternal": true,
+    "jsDocCompatibility": true,
+    "logLevel": "Warn",
+    "readme": "none",
+    "sort": [
+        "kind",
+        "instance-first",
+        "alphabetical"
+    ],
+    "plugin": [
+        "typedoc-plugin-markdown"
+    ],
+    "theme": "default",
+    "useTsLinkResolution": true
+}

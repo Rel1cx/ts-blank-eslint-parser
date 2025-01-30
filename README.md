@@ -45,9 +45,6 @@ export default [
         ...globals.browser,
       },
       parser: tsBlankEslintParser,
-      parserOptions: {
-        sourceType: "module",
-      },
     },
     rules: {
       ...eslintJs.configs.recommended.rules,
