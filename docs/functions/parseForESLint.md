@@ -8,7 +8,7 @@
 
 > **parseForESLint**(`code`, `options`?): [`ReturnType`](../namespaces/parseForESLint/type-aliases/ReturnType.md)
 
-Defined in: [index.ts:145](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/2287f77b69b11b20109967a407382e7f2c2ef666/src/index.ts#L145)
+Defined in: [index.ts:145](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/a4a041e415d0c6938bb1fffbf19edbd0f7ff281d/src/index.ts#L145)
 
 Use the parser to parse the JavaScript part of the given TypeScript code and return the AST and a ScopeManager for ESLint
 
