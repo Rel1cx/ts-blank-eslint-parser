@@ -2,6 +2,15 @@
 
 A custom ESLint parser for `.tsx?` files that strips out erasable TypeScript syntax with `ts-blank-space` then passes the rest to the `meriyah` parser.
 
+> [!IMPORTANT]
+> The `ts-blank-eslint-parser` is a work in progress and comes with limitations:
+>
+> - No support for [TypeScript syntax](https://github.com/bloomberg/ts-blank-space/blob/main/docs/unsupported_syntax.md) that need transformation like enums, namespaces, decorators
+> - No support for rules that require type information
+> - No fixable support for types (the types will also be stripped out in the fix output)
+>
+> Use it only if you are okay with the limitations.
+
 ## Installation
 
 ```bash
@@ -50,10 +59,6 @@ export default [
   },
 ];
 ```
-
-## Unsupported Syntax
-
-Some parts of TypeScript are not supported because they can't be erased in place due to having runtime semantics. See [unsupported_syntax.md](https://github.com/bloomberg/ts-blank-space/blob/main/docs/unsupported_syntax.md).
 
 ## License
 
