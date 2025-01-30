@@ -114,7 +114,7 @@ export function parseForESLint(code: string, options?: parseForESLint.Options): 
 export declare namespace parseForESLint {
   type Options = Omit<meriyah.Options, "onToken" | "onComment">;
   type ReturnType = {
-    ast: meriyah.ESTree.Program;
+    ast: parse.ReturnType;
     scopeManager: eslintScope.ScopeManager;
   };
 }
