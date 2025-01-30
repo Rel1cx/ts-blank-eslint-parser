@@ -8,7 +8,7 @@
 
 > `const` **defaultOptions**: `object`
 
-Defined in: [index.ts:13](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/a4a041e415d0c6938bb1fffbf19edbd0f7ff281d/src/index.ts#L13)
+Defined in: [index.ts:13](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/3f8f943ef8e7511c2bdab4b9e4d6b571ae849175/src/index.ts#L13)
 
 The default options for the parser
 

@@ -86,11 +86,11 @@ export const meta = {
  * @param options The options for the parser
  * @returns The estree-compatible AST
  * @example
-  * ```ts
-  * import { parse } from "ts-blank-eslint-parser";
-  * const code = "const a: bigint = 1n;";
-  * const ast = parse(code);
-  * ```
+ * ```ts
+ * import { parse } from "ts-blank-eslint-parser";
+ * const code = "const a: bigint = 1n;";
+ * const ast = parse(code);
+ * ```
  */
 export function parse(code: string, options?: parse.Options): parse.ReturnType {
   const tokens: meriyah.Options["onToken"] = [];

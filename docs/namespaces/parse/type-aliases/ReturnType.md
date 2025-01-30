@@ -8,7 +8,7 @@
 
 > **ReturnType**: `meriyah.ESTree.Program` & `object`
 
-Defined in: [index.ts:113](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/a4a041e415d0c6938bb1fffbf19edbd0f7ff281d/src/index.ts#L113)
+Defined in: [index.ts:113](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/3f8f943ef8e7511c2bdab4b9e4d6b571ae849175/src/index.ts#L113)
 
 ## Type declaration
 
