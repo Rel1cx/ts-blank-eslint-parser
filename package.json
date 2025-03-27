@@ -1,6 +1,6 @@
 {
   "name": "ts-blank-eslint-parser",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "license": "MIT",
   "sideEffects": false,
   "exports": {
@@ -32,27 +32,27 @@
     "prepare": "pnpm run build"
   },
   "dependencies": {
-    "eslint-scope": "^8.2.0",
+    "eslint-scope": "^8.3.0",
     "meriyah": "^6.0.5",
     "ts-blank-space": "^0.6.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@tsconfig/node22": "^22.0.0",
+    "@eslint/js": "^9.23.0",
+    "@tsconfig/node22": "^22.0.1",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^22.13.9",
-    "eslint": "^9.21.0",
-    "eslint-scope": "^8.2.0",
+    "@types/node": "^22.13.14",
+    "eslint": "^9.23.0",
+    "eslint-scope": "^8.3.0",
     "jiti": "^2.4.2",
     "meriyah": "^6.0.5",
     "ts-blank-space": "^0.6.1",
     "tsup": "^8.4.0",
-    "typedoc": "^0.27.9",
-    "typedoc-plugin-markdown": "^4.4.2",
+    "typedoc": "^0.28.1",
+    "typedoc-plugin-markdown": "^4.6.0",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0"
+    "typescript-eslint": "^8.28.0"
   },
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.7.0",
   "engines": {
     "node": ">=18.18.0"
   }

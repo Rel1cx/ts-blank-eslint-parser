@@ -6,9 +6,9 @@
 
 # Function: parse()
 
-> **parse**(`code`, `options`?): [`ReturnType`](../namespaces/parse/type-aliases/ReturnType.md)
+> **parse**(`code`, `options`?): [`ReturnType`](../ts-blank-eslint-parser/namespaces/parse/type-aliases/ReturnType.md)
 
-Defined in: [index.ts:95](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/3f8f943ef8e7511c2bdab4b9e4d6b571ae849175/src/index.ts#L95)
+Defined in: [index.ts:95](https://github.com/Rel1cx/ts-blank-eslint-parser/blob/3c608ff77cdcdf2858505460c7f3a5aeb8648312/src/index.ts#L95)
 
 Use the parser to parse the JavaScript part of the given TypeScript code and return the estree-compatible AST
 
@@ -22,13 +22,13 @@ The TypeScript code to parse
 
 ### options?
 
-[`Options`](../namespaces/parse/type-aliases/Options.md)
+[`Options`](../ts-blank-eslint-parser/namespaces/parse/type-aliases/Options.md)
 
 The options for the parser
 
 ## Returns
 
-[`ReturnType`](../namespaces/parse/type-aliases/ReturnType.md)
+[`ReturnType`](../ts-blank-eslint-parser/namespaces/parse/type-aliases/ReturnType.md)
 
 The estree-compatible AST
 

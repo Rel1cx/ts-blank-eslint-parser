@@ -6,8 +6,8 @@
 
 ## Namespaces
 
-- [parse](namespaces/parse/README.md)
-- [parseForESLint](namespaces/parseForESLint/README.md)
+- [parse](ts-blank-eslint-parser/namespaces/parse/README.md)
+- [parseForESLint](ts-blank-eslint-parser/namespaces/parseForESLint/README.md)
 
 ## Variables
 

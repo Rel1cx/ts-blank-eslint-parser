@@ -1,8 +1,8 @@
-[**ts-blank-eslint-parser**](../../README.md)
+[**ts-blank-eslint-parser**](../../../README.md)
 
 ***
 
-[ts-blank-eslint-parser](../../README.md) / parse
+[ts-blank-eslint-parser](../../../README.md) / parse
 
 # parse
 
