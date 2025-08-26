@@ -1,4 +1,4 @@
-import type { Options } from "tsup";
+import type { Options } from "tsdown";
 
 export default {
   clean: true,
@@ -10,7 +10,6 @@ export default {
   platform: "node",
   shims: false,
   sourcemap: false,
-  splitting: false,
   target: "es2021",
   treeshake: true,
 } satisfies Options;

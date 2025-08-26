@@ -24,7 +24,7 @@
     "./package.json"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "build:docs": "typedoc",
     "lint": "eslint .",
     "lint:publish": "publint",
@@ -32,27 +32,27 @@
     "prepare": "pnpm run build"
   },
   "dependencies": {
-    "eslint-scope": "^8.3.0",
-    "meriyah": "^6.0.5",
-    "ts-blank-space": "^0.6.1"
+    "eslint-scope": "^8.4.0",
+    "meriyah": "^6.1.4",
+    "ts-blank-space": "^0.6.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
-    "@tsconfig/node22": "^22.0.1",
+    "@eslint/js": "^9.34.0",
+    "@tsconfig/node22": "^22.0.2",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^22.13.14",
-    "eslint": "^9.23.0",
-    "eslint-scope": "^8.3.0",
-    "jiti": "^2.4.2",
-    "meriyah": "^6.0.5",
-    "ts-blank-space": "^0.6.1",
-    "tsup": "^8.4.0",
-    "typedoc": "^0.28.1",
-    "typedoc-plugin-markdown": "^4.6.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.28.0"
+    "@types/node": "^24.3.0",
+    "eslint": "^9.34.0",
+    "eslint-scope": "^8.4.0",
+    "jiti": "^2.5.1",
+    "meriyah": "^6.1.4",
+    "ts-blank-space": "^0.6.2",
+    "tsdown": "^0.14.2",
+    "typedoc": "^0.28.11",
+    "typedoc-plugin-markdown": "^4.8.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
   },
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.15.0",
   "engines": {
     "node": ">=18.18.0"
   }

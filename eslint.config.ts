@@ -12,7 +12,7 @@ export default tseslint.config(
     extends: [
       eslintJs.configs.recommended,
       tseslint.configs.recommended,
-    ]
+    ],
   },
   // base configuration for browser environment source files
   {
@@ -47,6 +47,6 @@ export default tseslint.config(
     files: GLOB_TS,
     rules: {
       "@typescript-eslint/no-namespace": "off",
-    }
-  }
+    },
+  },
 );

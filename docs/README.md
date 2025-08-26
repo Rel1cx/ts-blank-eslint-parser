@@ -1,6 +1,6 @@
 **ts-blank-eslint-parser**
 
-***
+---
 
 # ts-blank-eslint-parser
 

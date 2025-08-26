@@ -12,8 +12,8 @@ const { name, version } = packageJson;
  */
 export const defaultOptions = {
   /**
-  * The flag to allow module code
-  */
+   * The flag to allow module code
+   */
   module: true,
 
   /**
@@ -111,9 +111,9 @@ export function parse(code: string, options?: parse.Options): parse.ReturnType {
 export declare namespace parse {
   type Options = Omit<meriyah.Options, "onToken" | "onComment">;
   type ReturnType = meriyah.ESTree.Program & {
-    tokens: meriyah.Options['onToken'],
-    comments: meriyah.Options['onComment']
-  }
+    tokens: meriyah.Options["onToken"];
+    comments: meriyah.Options["onComment"];
+  };
 }
 
 /**

@@ -1,6 +1,6 @@
 [**ts-blank-eslint-parser**](../../../README.md)
 
-***
+---
 
 [ts-blank-eslint-parser](../../../README.md) / parseForESLint
 
